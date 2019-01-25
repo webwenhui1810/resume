@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>口袋妖怪复刻</title>
+    <style>
+        *{margin:0;padding:0;}
+        body{
+            background:#e3d6d0 url(./img/bg.jpg) repeat-x center top;
+            color:#4c4a4a;
+            font-size:12px;
+        }
+        a{
+            color: #4c4a4a;
+            text-decoration:none;
+        }
+        a img{
+            border:none;
+        }
+        ul, li, dl, dt, dd, p, h2, h3, h4, h5{
+            list-style:none;
+            padding:0;
+            margin:0;
+        }
+        .top{
+            width: 100%;
+            height: 69px;
+            background: #6063ff;
+            z-index:14;
+            position: fixed;
+        }
+        .top_a{
+            width:1000px;
+            margin:0 auto;
+            padding:0;
+            position: relative;
+        }
+        .index_logo{
+            float: left;
+            position: relative;
+            padding: 0px;
+            color: #929292;
+            margin-right: 27px;
+            margin-top: 12px;
+            width: 90px;
+            height: 90px;
+            padding: 1px;
+        }
+        .nav{
+            float: left;
+            width: 50%;
+            margin: 0 5px;
+        }
+        .nav ul{
+            float: left;
+            width: 100%;
+            margin-left: 5%;
+        }
+        .nav ul li{
+            float: left;
+            width: 20%;
+            height: 69px;
+            line-height: 69px;
+            text-align: center;
+            font-size: 16px;
+
+        }
+        .nav ul li a{
+            color:#fff;
+        }
+        .top_right{
+            float:right;
+        }
+        .top_right1{
+            float: left;
+            margin-top: 20px;
+            
+        }
+        .sp1{
+            display:inline-block;
+            color:#fff;
+            font-size: 16px;
+            position:absolute;
+            top:25px;
+            right:230px;
+        }
+        .sp2{
+            display:inline-block;
+            color:#fff;
+            font-size: 16px;
+            position:absolute;
+            top:25px;
+            right:280px;
+        }
+        .top_wx{
+            position: absolute;
+            left: 1030px;
+            top: 45px;
+            z-index: 1;
+            display: none;
+            height: 100px;
+            width: 100px;
+        }
+        #banner{
+            width:1000px;
+            margin:0 auto;
+        }
+        .ban1{
+            width: 100%;
+            float: left;
+            margin-top: 720px;
+            padding: 0;
+						position:relative;
+        }
+        .ban1_left{
+            float: left;
+            width: 50%;
+            position:absolute;
+            top:60px;
+        }
+        .ban1_left_a{
+            float:left;
+        }
+        .ban1_left_b{
+            float: right;
+            width: 67%;
+        }
+        .ban_video{
+            width: 60%;
+            float:left;
+            margin:15px 400px;
+            background:transparent;
+            height:250px;
+				}
+        .ban2{
+            width: 100%;
+            float: left;
+            display:flex;
+            justify-content:space-between;
+        }
+        .ban3{
+            width: 100%;
+            float: left;
+            margin-top: 10px;
+        }
+        .ban3_left{
+            float: left;
+            width: 50%;
+            height:214px;
+            background:blue;
+            position: relative;
+        }
+        .ban3_left>img{
+            position: absolute;
+            width:100%;
+            height: 214px;
+            top:0;
+            left: 0;
+            opacity: 0;
+            transition: all 0.5s linear;
+        }
+        .ban3_left>img.show{
+            opacity: 1;
+        }
+        .ban3_right{
+            float: right;
+            width: 50%;
+            height:214px;
+        }
+        .ban4{
+            background: #ffffff;
+            width: 100%;
+            float: left;
+            margin-top: 10px;
+        }
+        .ban4_left{
+            float: left;
+            width: 90%;
+            font-size: 16px;
+            line-height: 35px;
+            padding-left: 20px;
+        }
+        .ban4_right{
+            width: 98%;
+            border-top: 1px solid #c9f3ff;
+            float: left;
+            padding: 17px 10px 10px 10px;
+        }
+        .ban4_right img{
+            margin: 0 0 7px 15px;
+        }
+        #foot{
+            width: 100%;
+            color: #a6a7a8;
+            background: #1b1b1b;
+            margin-top: 10px;
+            line-height: 20px;  
+            float: left;
+            font-size: 12px;
+            height: 109px;
+        }
+        .foot1{
+            width:1000px;
+            margin:0 auto;
+            padding:0;
+        }
+        .foot1_left{
+            float: left;
+            margin-top: 20px;
+            margin-left: 10%;
+        }
+        .foot1_right{
+            float: left;
+            margin-top: 30px;
+            margin-left: 20px;
+        }
+        .ban3_right_title{
+            height: 46px;
+            line-height: 46px;
+            position: relative;
+            padding: 0 10px 0 17px;
+            background: #6063ff;
+        }
+        .ban3_right_title ul{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            position: absolute;
+            height: 46px;
+            width: 83%;
+            font-size: 15px;
+            float: left;
+        }
+        .ban3_right_title ul li{
+            float: left;
+            display: block;
+            cursor: pointer;
+            width: 15%;
+            color: #fff;
+            height: 35px;
+            line-height: 35px;
+            margin-top: 11px;
+            padding-left: 17px;
+        }
+        .ban3_right_title ul li:hover{
+            padding: 0px;
+            width: 15%;
+            background:#fff;
+            color: #4aacec;
+            height: 35px;
+            line-height: 35px;
+            padding-left: 17px;
+        }
+        .ban3_right_title span{
+            height: 46px;
+            line-height: 46px;
+            float:right;
+            position: relative;
+            padding: 0 10px 0 17px;
+            background: #6063ff;
+        }
+        .ban3_content{
+            width: 92%;
+            padding: 10px 20px;
+            float: left;
+            height: 148px;
+            background: #fff;
+            position: relative;
+        }
+        .ban3_content ul{
+            width:92%;
+            position:absolute;
+        }
+        .ban3_content ul li{
+            width: 100%;
+            line-height: 25px;
+            font-size: 12px;
+            float: left;
+        }
+        .ban3_content ul li p{
+            display: inline-block;
+        }
+        .ban3_content ul li span{
+            float: right;
+            margin-left:10px;
+        }
+        .ban3_content>ul.con_2{
+            display: none;
+        }
+        .ban3_content>ul.con_3{
+            display: none;
+        }
+        .ban3_content>ul.con_4{
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <header id="head">
+        <div class="top">
+            <div class="top_a">
+                <div class="index_logo">
+                    <a href="#"><img src="./img/mologo.png" alt=""/></a>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li><a href="user_myindex.html">首页</a></li>
+                        <li><a href="">新闻中心</a></li>
+                        <li><a href="user_mystrategy.html">游戏攻略</a></li>
+                        <li><a href="user_mypicture.html">精灵图鉴</a></li>
+                        <li><a href="#">官方论坛</a></li>
+                    </ul>
+                </div>
+                <a href="user_login.html"><span class="sp1">登录</span></a>
+                <a href="user_register.html"><span class="sp2">注册</span></a>
+                <div class="top_right">
+                    <div class="top_right1">
+                        <a href="#">
+                            <img src="./img/pic_02.jpg" alt=""/>
+                        </a>
+                        <div class="top_wx">
+                            <img src="./img/wx_ewm.jpg" alt=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div id="banner">
+            <div class="ban1">
+                <div class="ban1_left">
+                    <div class="ban1_left_a">
+                        <img src="./img/ydy_ico_10.png" alt=""/>
+                    </div>
+                    <div class="ban1_left_b">
+                        <a href="#">
+                            <img src="./img/pic_18.png" alt=""/>
+                        </a>
+                        <a href="#">
+                            <img src="./img/pic_21.png" alt=""/>
+                        </a>
+                    </div>
+                </div>
+			<div class="ban_video">
+			<video loop autoplay muted width="650px" height="250px">
+		        <source src="./img/xuanchuan1.mp4"></source></video>
+			</div>
+            </div>
+						
+            <div class="ban2">
+                <div class="ban2_a">
+                    <a href="#">
+                        <img src="./img/pic_25.jpg" alt=""/>
+                    </a>
+                </div>
+                <div class="ban2_b">
+                    <a href="#">
+                        <img src="./img/pic_26.jpg" alt=""/>
+                    </a>
+                </div>
+                <div class="ban2_c">
+                    <a href="#">
+                        <img src="./img/pic_27.jpg" alt=""/>
+                    </a>
+                </div>
+                <div class="ban2_d">
+                    <a href="#">
+                        <img src="./img/pic_28.jpg" alt=""/>
+                    </a>
+                </div>
+            </div>
+            <div class="ban3">
+                <div class="ban3_left">
+                    <img src="./img/lunbo.jpg" class="show">
+                    <img src="./img/lunboa.jpg">
+                    <img src="./img/lunbo2.jpg">
+                    <img src="./img/lunbob.jpg">
+                </div>
+                <div class="ban3_right">
+                    <div class="ban3_right_title">
+                        <ul id="tab">
+                            <li data-target=".con_1" data-toggle="tab">新闻</li>
+                            <li data-target=".con_2" data-toggle="tab">公告</li>
+                            <li data-target=".con_3" data-toggle="tab">活动</li>
+                            <li data-target=".con_4" data-toggle="tab">攻略</li>
+                        </ul>
+                        <span><a href="#"><img src="./img/img_21.jpg" alt=""/></a></span>
+                    </div>
+                    <div class="ban3_content">
+                            <ul class="con_1">
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">《口袋妖怪复刻》新版超燃登场 全新内容今日上线</a>
+                                    <span>2019-1-10</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">《口袋妖怪复刻》开年新版爆料②</a>
+                                    <span>2019-1-8</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">《口袋妖怪复刻》开年新版爆料①</a>
+                                    <span>2019-1-8</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">《口袋妖怪复刻》新版大爆料  全新精灵加入复刻</a>
+                                    <span>2019-1-8</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">复刻贺岁之战《口袋妖怪复刻》金猪杯超燃对决来袭</a>
+                                    <span>2019-1-4</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">《口袋妖怪复刻》为新年喝彩 元旦活动惊喜连连</a>
+                                    <span>2018-12-28</span>
+                                </li>
+                            </ul>
+
+                            <ul class="con_2">
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">《口袋妖怪复刻》1月10日更新维护公告【安卓混服】</a>
+                                    <span>2019-1-10</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">《口袋妖怪复刻》1月8日更新维护公告【应用宝】</a>
+                                    <span>2019-1-9</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">《口袋妖怪复刻》IOS正版部分区服合服公告</a>
+                                    <span>2019-1-7</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">《口袋妖怪复刻》部分区服合服公告</a>
+                                    <span>2018-12-17</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">《口袋妖怪复刻》12月12日新版更新维护公告【混服】</a>
+                                    <span>2018-12-12</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">《口袋妖怪复刻》12月10日新版更新公告【应用宝专服】</a>
+                                    <span>2018-12-10</span>
+                                </li>
+                            </ul>
+                       
+                            <ul class="con_3">
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">【玩家原创】口袋妖怪复刻精选视频合集</a>
+                                    <span>2018-4-8</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">提建议，有福利！《口袋妖怪复刻》建议收集箱开启</a>
+                                    <span>2017-3-14</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">【活动】《口袋妖怪复刻》写情人节心语，豪礼免费送！！</a>
+                                    <span>2017-2-13</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">【巅峰赛】冠军诞生！首届安卓巅峰赛完美落幕</a>
+                                    <span>2017-1-17</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">《口袋妖怪复刻》安卓巅峰赛对战视频合集</a>
+                                    <span>2017-1-5</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">强强对决《口袋妖怪复刻》安卓巅峰赛正式开启</a>
+                                    <span>2016-12-15</span>
+                                </li>
+                            </ul>
+                     
+                            <ul class="con_4">
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">《口袋妖怪复刻》救赎-队医和奶妈的选择</a>
+                                    <span>2018-11-30</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">《口袋妖怪复刻》新版水都守护神解析与应对</a>
+                                    <span>2018-11-14</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">助力S2赛季！复刻阵容搭建体系的和谐性攻略</a>
+                                    <span>2018-9-7</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">《口袋妖怪复刻》新版本改版各位置精灵推荐分析</a>
+                                    <span>2018-8-27</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">《口袋妖怪复刻》被遗弃的黑化</a>
+                                    <span>2018-8-20</span>
+                                </li>
+                                <li>
+                                    <p>[新闻]</p>
+                                    <a href="#">《口袋妖怪复刻》实战中如何合理联防以及其重要性</a>
+                                    <span>2018-7-17</span>
+                                </li>
+                            </ul>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="ban4">
+                <div class="ban4_left">合作媒体</div>
+                <div class="ban4_right">
+                    <a href="#"><img src="./img/logo1.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo2.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo3.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo4.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo5.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo6.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo7.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo8.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo9.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo10.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo11.png" alt=""/></a>
+                    <a href="#"><img src="./img/logo12.png" alt=""/></a>
+                    <a href="#"><img src="./img/logo13.png" alt=""/></a>
+                    <a href="#"><img src="./img/logo14.png" alt=""/></a>
+                    <a href="#"><img src="./img/logo15.png" alt=""/></a>
+                    <a href="#"><img src="./img/logo16.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo17.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo18.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo19.png" alt=""/></a>
+                    <a href="#"><img src="./img/logo20.png" alt=""/></a>
+                    <a href="#"><img src="./img/logo21.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo22.png" alt=""/></a>
+                    <a href="#"><img src="./img/logo23.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo24.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo25.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo26.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo27.png" alt=""/></a>
+                    <a href="#"><img src="./img/logo28.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo29.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo30.png" alt=""/></a>
+                    <a href="#"><img src="./img/logo31.png" alt=""/></a>
+                    <a href="#"><img src="./img/logo32.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo33.png" alt=""/></a>
+                    <a href="#"><img src="./img/logo34.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo35.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo36.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo37.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo38.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo39.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo40.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo41.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo42.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo43.jpg" alt=""/></a>
+                    <a href="#"><img src="./img/logo44.jpg" alt=""/></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="foot">
+        <div class="foot1">
+            <div class="foot1_left">
+                <img src="./img/copy_03.jpg" alt=""/>
+            </div>
+            <div class="foot1_right">
+                客服QQ：1213226403 官方QQ1群：159610038 官方QQ2群：374428661 官方QQ3群：293369823
+                <br>
+
+                客服邮箱：1213226403@qq.com 渠道合作：365057151
+                <br>
+
+                版权所有Copyright@2015 阿斯卡德
+            </div>
+        </div>
+    </footer>
+    <script>
+				//定时器轮播
+        function task(){
+					var img=document.getElementsByClassName("show")[0];
+					img.className="";
+					if(img.nextElementSibling!==null)
+					img.nextElementSibling.className="show";
+					else
+					img.parentNode.children[0].className="show";
+				}
+				var n=setInterval(task,3500);
+				var div=document.getElementsByClassName("ban3_left")[0];
+				div.onmouseover=function(){
+					clearInterval(n);
+				}
+				div.onmouseout=function(){
+					n=setInterval(task,3500);
+				}
+    </script>
+    <script>
+				//页头
+        var img1=document.querySelector(".top_right1>a:first-child>img")
+        img1.onmouseover=function(){
+            var img1=this;
+            var img2=img1.parentNode.nextElementSibling;
+                img2.style.display="block"
+              img1.onmouseout=function(){
+          
+                img2.style.display="none"
+            } 
+        }
+    </script>
+    <script>
+        document.getElementsByClassName("con_1")[0].style.display="block";
+        var titles=document.querySelectorAll("[data-toggle=tab]");
+        for(var title of titles){
+            title.onmouseover=function(){
+                var title=this;
+                var uls=document.querySelectorAll(".ban3_content>ul");
+                for(var ul of uls){
+                    ul.style.display="none";
+                }
+                var id=title.getAttribute("data-target")
+                var ul=document.querySelector(id); 
+                ul.style.display="block"  
+            }
+        }
+    </script>
+</body>
+</html>
