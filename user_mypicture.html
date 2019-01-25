@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>精灵图鉴</title>
+    <meta name="viewport" content="width=device-width,initial-scale-1.0"/>
+    <!--引入boot文件，引入顺序有要求-->
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/header.css"/>
+    <link rel="stylesheet" href="./css/footer.css"/>
+    <style>
+        *{margin:0;padding: 0;}
+        body{
+        background:#e3d6d0 url(./img/bg.jpg) repeat-x center top;
+        color:#4c4a4a;
+        font-size:12px;
+        }
+        a{
+        color: #4c4a4a;
+        text-decoration:none;
+        }
+        a img{
+        border:none;
+        }
+        ul, li, dl, dt, dd, p, h2, h3, h4, h5{
+        list-style:none;
+        padding:0;
+        margin:0;
+        }
+        .container{
+            width:100%;
+            height:100%;
+            float:left;
+        }
+        .my_icon{
+            width:1000px;
+            height:546px;
+            margin:0 auto;
+            margin-top:565px;
+        }
+        .icon_left{
+            float: left;
+            width: 274px;
+        }
+        .icon_right{
+            float: left;
+            width: 726px;
+            height:60px;
+            line-height: 60px;
+            background: #f1cd52;
+        }
+        .icon_right h2{
+            font-size: 24px;
+            margin-left: 20px;
+            float: left;
+            color: #000;
+        }
+        .icon_right_text{
+            float: left;
+            width: 70%;
+            margin-left: 70px;
+        }
+        .icon_right_text a{
+            line-height: 40px;
+            float: left;
+            margin-top: 20px;
+            font-size: 16px;
+            width: 30%;
+            text-align: center;
+            color: #000;
+            margin-right: 10px;
+        }
+        .icon_right_img{
+            float: left;
+            width: 686px;
+            height:681px;
+            background: #fff;
+            padding: 0px 20px;
+        }
+        .right_images{
+            float: left;
+            width: 100%;
+            height:608px;
+            padding-top: 10px;
+        }
+        .images{
+            margin-right: 4px;
+            float: left;
+            width: 160px;
+            margin-bottom: 10px;
+            margin-left: 6px;
+            margin-top: 20px;
+        }
+        .images p{
+            float: left;
+            width: 100%;
+            background: #dcdcdc;
+            text-align: center;
+            line-height: 26px;
+            font-size: 16px;
+        }
+        .images img{
+            width:144px;
+            height:144px;
+        }
+        .page{
+            float: left;
+            width: 100%;
+            height:42px;
+            margin-top: 20px;
+            padding-bottom: 10px;
+        }
+        .page ul{
+            display:flex;
+            justify-content:space-around;
+        }
+        .page ul li{
+            height: 19px;
+            line-height: 30px;
+            padding: 5px 8px;
+            font-size: 12px;
+            color: #898989;
+            text-decoration: none;
+            border: 1px solid #dddddd;
+        }
+        .page ul li:first-child{
+            border: 1px solid #dddddd;
+            height: 20px;
+            line-height: 30px;
+            padding: 5px 8px;
+            margin: 0 2px;
+        }
+        .page ul li:last-child{
+            border: 1px solid #dddddd;
+            height: 20px;
+            line-height: 30px;
+            padding: 5px 8px;
+            margin: 0 2px;
+        }
+        .my_footer{
+
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="top">
+        <div class="top_a">
+            <div class="index_logo">
+                <a href="#"><img src="./img/mologo.png" alt=""/></a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="uesr_myindex.html">首页</a></li>
+                    <li><a href="#">新闻中心</a></li>
+                    <li><a href="user_mystrategy.html">游戏攻略</a></li>
+                    <li><a href="user_mypicture.html">精灵图鉴</a></li>
+                    <li><a href="#">官方论坛</a></li>
+                </ul>
+            </div>
+            <div class="top_right">
+                <div class="top_right1">
+                    <a href="user_login.html"><span class="sp1">登录</span></a>
+                    <a href="user_register.html"><span class="sp2">注册</span></a>
+                    <a href="#">
+                        <img src="./img/pic_02.jpg" alt=""/>
+                    </a>
+                    <div class="top_wx">
+                        <img src="./img/wx_ewm.jpg" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="my_icon">
+        <div class="icon_left">
+            <img src="./img/leftpic.jpg" alt=""/>
+        </div>
+        <div class="icon_right">
+            <h2>角色图鉴</h2>
+            <div class="icon_right_text">
+                <a href="user_mypicture.html">精灵</a>
+                <a href="user_picture.html">人物</a>
+            </div>
+        </div>
+        <div class="icon_right_img">
+            <div class="right_images">
+                <div class="images"><img src="./img/huoji.jpg" alt=""/><p>火雉鸡</p></div>
+                <div class="images"><img src="./img/guladun.png" alt=""/><p>古拉顿</p></div>
+                <div class="images"><img src="./img/jienigui.png" alt=""/><p>杰尼龟</p></div>
+                <div class="images"><img src="./img/chaomeng.png" alt=""/><p>超梦</p></div>
+                <div class="images"><img src="./img/haihuangya.png" alt=""/><p>海皇牙</p></div>
+                <div class="images"><img src="./img/liekongzuo.png" alt=""/><p>裂空座</p></div>
+                <div class="images"><img src="./img/leidianshou.png" alt=""/><p>雷电兽</p></div>
+                <div class="images"><img src="./img/pikaqiu.png" alt=""/><p>皮卡丘</p></div>
+                <div class="images"><img src="./img/xiyiwang.png" alt=""/><p>蜥蜴王</p></div>
+                <div class="images"><img src="./img/miaowa.jpg" alt=""/><p>妙蛙种子</p></div>
+                <div class="images"><img src="./img/shanaiduo.png" alt=""/><p>沙奈朵</p></div>
+                <div class="images"><img src="./img/badahu.png" alt=""/><p>巴大蝴</p></div>
+            </div>
+            <div class="page">
+                <ul>
+                    <li><a href="#">上一页</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li><a href="#">8</a></li>
+                    <li><a href="#">9</a></li>
+                    <li><a href="#">10</a></li>
+                    <li><a href="#">11</a></li>
+                    <li><a href="#">12</a></li>
+                    <li><a href="#">13</a></li>
+                    <li><a href="#">14</a></li>
+                    <li><a href="#">15</a></li>
+                    <li><a href="#">16</a></li>
+                    <li><a href="#">下一页</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer class="foot">
+        <div class="foot1">
+            <div class="foot1_left">
+                <img src="./img/copy_03.jpg" alt=""/>
+            </div>
+            <div class="foot1_right">
+                客服QQ：1213226403 官方QQ1群：159610038 官方QQ2群：374428661 官方QQ3群：293369823
+                <br>
+
+                客服邮箱：1213226403@qq.com 渠道合作：365057151
+                <br>
+
+                版权所有Copyright@2015 阿斯卡德
+            </div>
+        </div>
+    </footer>
+    </div>
+</div>
+</body>
+</html>
